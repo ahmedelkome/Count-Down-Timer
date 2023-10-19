@@ -1,0 +1,11 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <style name="Base.Theme.CountDownTimer" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorOnPrimary">@color/offwhite</item>
+        <item name="colorPrimary">@color/offwhite</item>
+        <item name="colorPrimaryVariant">@color/offwhite</item>
+
+    </style>
+    <style name="Theme.CountDownTimer" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+    </style>
+</resources>
