@@ -39,17 +39,13 @@ class MainActivity : AppCompatActivity() {
         reset.setOnClickListener {
             resettime()
         }
-
-
     }
-
-
     private fun resettime(){
         timer?.cancel()
         reimagining =starttime
         Updatetime()
         pomo.text = resources.getText(R.string.Take_a_Pomodor)
-        istimerunning == false
+        istimerunning = false
     }
 
 
