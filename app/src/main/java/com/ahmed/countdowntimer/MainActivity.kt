@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.CountDownTimer
 import android.widget.Button
+import android.widget.ProgressBar
 import android.widget.TextView
 import android.widget.Toast
 
@@ -16,11 +17,13 @@ class MainActivity : AppCompatActivity() {
     lateinit var Time: TextView
     lateinit var start:Button
     lateinit var reset:TextView
+    lateinit var pb:ProgressBar
     private fun id(){
         pomo=findViewById(R.id.pomo_tv)
         Time=findViewById(R.id.time_tv)
         start=findViewById(R.id.start_btn)
         reset=findViewById(R.id.reset_tv)
+        pb= findViewById(R.id.progressBar)
     }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -40,12 +43,16 @@ class MainActivity : AppCompatActivity() {
             resettime()
         }
     }
+
+
     private fun resettime(){
         timer?.cancel()
         reimagining =starttime
         Updatetime()
         pomo.text = resources.getText(R.string.Take_a_Pomodor)
         istimerunning = false
+        pb.progress = 100
+
     }
 
 
@@ -56,6 +63,7 @@ class MainActivity : AppCompatActivity() {
              override fun onTick(timelift: Long) {
                 reimagining=timelift
                 Updatetime()
+                 pb.progress = reimagining.toDouble().div(starttime.toDouble()).times(100).toInt()
             }
 
              override fun onFinish() {
