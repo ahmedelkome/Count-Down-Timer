@@ -3,6 +3,7 @@ package com.ahmed.countdowntimer
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.CountDownTimer
+import android.os.PersistableBundle
 import android.widget.Button
 import android.widget.ProgressBar
 import android.widget.TextView
@@ -18,6 +19,7 @@ class MainActivity : AppCompatActivity() {
     lateinit var start:Button
     lateinit var reset:TextView
     lateinit var pb:ProgressBar
+     var key = "key"
     private fun id(){
         pomo=findViewById(R.id.pomo_tv)
         Time=findViewById(R.id.time_tv)
@@ -33,7 +35,7 @@ class MainActivity : AppCompatActivity() {
 
         start.setOnClickListener {
             if (istimerunning == false) {
-                starttimer()
+                starttimer(starttime)
                 pomo.text = resources.getText(R.string.keep_going)
             }
         }
@@ -57,8 +59,8 @@ class MainActivity : AppCompatActivity() {
 
 
 
-    private fun starttimer() {
-         timer = object : CountDownTimer ( 1*starttime , 1 * 1000) {
+    private fun starttimer(Starttime : Long) {
+         timer = object : CountDownTimer(Starttime , 1 * 1000) {
 
              override fun onTick(timelift: Long) {
                 reimagining=timelift
@@ -81,5 +83,17 @@ class MainActivity : AppCompatActivity() {
         val second = reimagining.div(1000) % 60
         val formattime = String.format("%02d:%02d", minute, second)
         Time.text = formattime
+    }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        outState.putLong(key,reimagining)
+    }
+
+    override fun onRestoreInstanceState(savedInstanceState: Bundle) {
+        super.onRestoreInstanceState(savedInstanceState)
+       val savedtime =  savedInstanceState.getLong(key)
+        if (savedtime!=starttime)
+        starttimer(savedtime)
     }
 }

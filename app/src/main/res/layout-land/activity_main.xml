@@ -4,22 +4,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
     android:background="@color/offwhite"
+    tools:context=".MainActivity"
 
-    >
+    tools:ignore="MissingDefaultResource">
 
     <TextView
         android:id="@+id/pomo_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="56dp"
+        android:layout_marginTop="8dp"
         android:text="@string/Take_a_Pomodor"
         android:textColor="#CCCCCC"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.43"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -27,13 +26,12 @@
         android:id="@+id/time_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="196dp"
+        android:layout_marginTop="84dp"
         android:text="@string/Time"
         android:textColor="#cccccc"
-        android:textSize="50sp"
+        android:textSize="40sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.44"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/pomo_tv" />
 
@@ -41,14 +39,13 @@
         android:id="@+id/start_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="132dp"
+        android:layout_marginTop="92dp"
         android:background="@drawable/rounded"
-        android:backgroundTint="@color/red"
 
+        android:backgroundTint="@color/red"
         android:text="@string/start"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.464"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/time_tv" />
 
@@ -56,30 +53,31 @@
         android:id="@+id/reset_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="32dp"
         android:letterSpacing="0.1"
         android:text="@string/reset"
         android:textColor="#cccccc"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.44"
+        app:layout_constraintHorizontal_bias="0.499"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/start_btn" />
 
     <ProgressBar
         android:id="@+id/progressBar"
         style="?android:attr/progressBarStyle"
-        android:layout_width="330dp"
-        android:layout_height="330dp"
+        android:layout_width="215dp"
+        android:layout_height="187dp"
+        android:layout_marginTop="8dp"
         android:indeterminateOnly="false"
         android:progress="100"
         android:progressDrawable="@drawable/prograss"
         app:layout_constraintBottom_toBottomOf="@+id/time_tv"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.32"
+        app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/time_tv"
-        app:layout_constraintVertical_bias="0.49" />
+        app:layout_constraintVertical_bias="0.507" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
